@@ -1,5 +1,6 @@
 :root {
   --active-color: #2196f3;
+  --hover-color: #188ce8;
   --inactive-color: #f5f4fa;
   --white: #ffffff;
   --primary-font-color: #212121;
@@ -262,6 +263,12 @@ img {
   padding: 10px 32px;
   min-width: 136px;
   min-height: 30px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+  background-color: var(--hover-color);
 }
 
 /* Work methods */
@@ -693,12 +700,12 @@ img {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background: var(--background-grey-color);
-  outline: none;
 
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .subscribe-email:focus {
+  outline: none;
   border-color: var(--active-color);
 }
 
@@ -721,6 +728,12 @@ img {
   border: transparent;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-button:focus,
+.subscribe-button:hover {
+  background-color: var(--hover-color);
 }
 
 /* Модальное окно и бэкдроп*/
@@ -764,6 +777,7 @@ img {
 }
 
 .close-btn {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -779,4 +793,155 @@ img {
 
 .close-btn-icon {
   fill: black;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-btn:hover .close-btn-icon,
+.close-btn:focus .close-btn-icon {
+  fill: var(--active-color);
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.modal-form-header {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+  color: var(--primary-font-color);
+}
+
+.modal-form-wrapper {
+  position: relative;
+  margin-top: 4px;
+  display: block;
+}
+
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 38px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:focus {
+  outline: none;
+  border-color: var(--active-color);
+}
+
+.modal-form-input:focus + .modal-form-icon {
+  fill: var(--active-color);
+}
+
+.modal-form-field {
+  position: relative;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--secondary-font-color);
+  margin-bottom: 10px;
+}
+
+.modal-form-icon {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-comment {
+  margin-top: 6px;
+  padding: 12px 16px;
+  margin-top: 4px;
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  overflow: auto;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-comment::placeholder {
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form-comment:focus {
+  outline: none;
+  border-color: var(--active-color);
+}
+
+.modal-form-checkbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--secondary-font-color);
+}
+
+.modal-form-checkbox-label::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid #303030;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-right: 7px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-checkbox:checked + .modal-form-checkbox-label::before {
+  background-color: var(--active-color);
+  background-image: url(/images/icon\ check.svg);
+  background-position: center;
+  border-color: var(--active-color);
+}
+
+.modal-terms-text {
+  text-decoration: underline;
+  color: var(--active-color);
+  margin-left: 5px;
+}
+
+.modal-submit-button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  padding: 10px 55px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  color: var(--white);
+  background-color: var(--active-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-submit-button:focus,
+.modal-submit-button:hover {
+  background-color: var(--hover-color);
 }
